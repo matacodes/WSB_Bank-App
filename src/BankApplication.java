@@ -33,7 +33,13 @@ class BankAccount {
 
     
     // Method of withdraw
-    
+    void withdraw(int amount) {
+        if (amount != 0) {
+            lastTransaction = -amount;
+            balance = balance + lastTransaction;
+        }
+    }
+
     
     // Method of showing last transaction on the account
 
