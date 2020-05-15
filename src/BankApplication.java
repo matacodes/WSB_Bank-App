@@ -22,10 +22,15 @@ class BankAccount {
         customerID = custid;
         customerName = custname;
     }
-
     
     // Method of deposit
-    
+    void deposit(int amount) {
+        if (amount != 0) {
+            lastTransaction = amount;
+            balance = balance + lastTransaction;
+        }
+    }
+
     
     // Method of withdraw
     
