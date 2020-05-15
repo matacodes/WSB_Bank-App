@@ -18,6 +18,10 @@ class BankAccount {
     String customerName; // Customer Name
 
     // Object of bank account
+    BankAccount(String custid, String custname) {
+        customerID = custid;
+        customerName = custname;
+    }
 
     
     // Method of deposit
