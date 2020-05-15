@@ -17,5 +17,19 @@ class BankAccount {
     String customerID; // Customer ID
     String customerName; // Customer Name
 
+    // Object of bank account
 
+    
+    // Method of deposit
+    
+    
+    // Method of withdraw
+    
+    
+    // Method of showing last transaction on the account
+
+
+    
+    
+    
 }
