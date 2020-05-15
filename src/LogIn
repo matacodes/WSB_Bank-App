@@ -1,0 +1,26 @@
+public class LogIn {
+    private String name = "Karol";
+    String surname;
+    String login;
+
+
+   /* Scanner tekst = new Scanner (System.in);
+    System.out.println("Podaj imie: ");
+    name = tekst.next();
+    System.out.println("Podaj nazwisko: ");
+    surname = tekst.next();
+    System.out.println("Wpisałeś: ");
+    System.out.println(+ name + " " + surname);
+    String a = name.substring(0. 3);
+    String b = surname.substring(0. 3);
+    login = "a" + "b";
+    System.out.println(login);
+
+    /*
+
+    podajemy login
+podajemy haslo
+i sprawdzamy, po zalogowaniu przechodzimy do konta
+
+     */
+}
