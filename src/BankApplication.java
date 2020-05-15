@@ -42,6 +42,17 @@ class BankAccount {
 
     
     // Method of showing last transaction on the account
+    void getLastTransaction() {
+        if (lastTransaction > 0) {
+            System.out.println("Zdeponowano: " + lastTransaction);
+        } else if (lastTransaction < 0) {
+            System.out.println("Wyp³acono: " + Math.abs(lastTransaction));
+        } else {
+            System.out.println("Brak tranzakcji na koncie");
+        }
+    }
+
+    
 
 
     
