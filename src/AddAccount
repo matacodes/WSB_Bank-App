@@ -1,17 +1,9 @@
 package Apka;
 
 public class AddAccount {
-    /*
-    addaccount - dodaje nowego uzytkownika.
-Sprawdzamy czy nie ma juz max ilosci kont.
-Jeśli nie to tworzymy uzytkownika
-Uzytkownik podaje imie, nazwisko, haslo itp
-Login sam sie tworzy - myslisz ze to bedzie dobre pobrac np 3litery imienia i nazwiska i dodac np 1 na koncu np. karbin1 areskr2
 
- musimy ogarnac zapisywanie uzytkownika do pliku i tworzenie listy klientow poprzez wypisanie loginu kazdego na tej liscie
- */
-
-      /*  private static final int MAX_CUSTOMER_NUMBER =5;
+    
+       private static final int MAX_CUSTOMER_NUMBER =5;
         private BankCustomer[] customers = new BankCustomer[MAX_CUSTOMER_NUMBER];
         private int registerCustomer = 0;
 
@@ -29,5 +21,5 @@ Login sam sie tworzy - myslisz ze to bedzie dobre pobrac np 3litery imienia i na
 
 
 
-       */
+      
 }
