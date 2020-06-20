@@ -1,0 +1,147 @@
+ import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
+import static java.awt.Font.BOLD;
+
+public class Grafika extends JFrame implements ActionListener
+{
+    JButton bZaloguj, bDodajKonto, bWyjscie;
+    JLabel lWyświetlDate, lWyświetlaPrzywitanie;
+    JMenuBar menuBar;
+    JMenu menuPlik, menuNarzędzia, menuPomoc, menuOpcje;
+    JCheckBox chOpcja2;
+    JMenuItem mOtwórz, mZapisz, mWyjście, mNarz1, mNarz2, mOProgramie, mPomoc, mOpcje1;
+
+    public Grafika()
+    {
+        setSize(500, 500);  // tworzy okienko
+        setTitle("E-Portfel"); // nadaje nazwe
+        setLayout(null);
+
+        bZaloguj = new JButton("Zaloguj"); // tworzy przycisk
+        bZaloguj.setBounds(60, 60, 150, 20); // rozmieszczenie przycisku
+        add(bZaloguj); // dodaje przycisk
+        bZaloguj.addActionListener(this);
+
+        bDodajKonto = new JButton("Dodaj konto");
+        bDodajKonto.setBounds(60, 80, 150, 20);
+        add(bDodajKonto);
+        bDodajKonto.addActionListener(this);
+
+        bWyjscie = new JButton("Wyjćie");
+        bWyjscie.setBounds(60, 100, 150, 20);
+        add(bWyjscie);
+        bWyjscie.addActionListener(this);
+
+        lWyświetlDate = new JLabel("Data");
+        lWyświetlDate.setBounds(60, 120, 300, 20);
+        lWyświetlDate.setForeground(Color.RED);
+        add(lWyświetlDate);
+        lWyświetlDate.setText(new Date().toString());
+
+        lWyświetlaPrzywitanie = new JLabel("Witaj w aplikacje E-Portfel");
+        lWyświetlaPrzywitanie.setBounds(60, 40, 2000, 20);
+        lWyświetlaPrzywitanie.setForeground(new Color(150, 90, 150)); // twoorzenie nowego koloru
+        // trzy skladniki czerwony zielony niebieski w skali od 0 do 250
+        lWyświetlaPrzywitanie.setFont(new Font("Przywitanie", BOLD, 22));
+// trzy parametry
+        add(lWyświetlaPrzywitanie);
+        lWyświetlaPrzywitanie.getText();
+
+        menuBar = new JMenuBar();
+        menuPlik = new JMenu("Plik");
+        menuNarzędzia = new JMenu("Narzędzia");
+        menuPomoc = new JMenu("Pomoc");
+
+        setJMenuBar(menuBar);
+        menuBar.add(menuPlik);
+        menuBar.add(menuPomoc);
+
+        mOtwórz = new JMenuItem("Otwórz", 'O');
+        mZapisz = new JMenuItem("Zapisz");
+        mWyjście = new JMenuItem("Wyjście");
+
+        mWyjście.addActionListener(this);
+        mWyjście.setAccelerator(KeyStroke.getKeyStroke("ctrl X"));
+
+
+        menuPlik.add(mOtwórz);
+        menuPlik.add(mZapisz);
+        menuPlik.addSeparator();
+        menuPlik.add(mWyjście);
+
+
+        menuBar.add(menuNarzędzia);
+        mNarz1 = new JMenuItem("Narzędzia 1");
+        mNarz1.setEnabled(false);
+        mNarz2 = new JMenuItem("Narzędzia 2");
+
+        menuNarzędzia.add(mNarz1);
+        menuNarzędzia.add(mNarz2);
+
+        menuOpcje = new JMenu("Opcje");
+        mOpcje1 = new JMenuItem("Opcje1");
+        chOpcja2 = new JCheckBox("Opcje2");
+        chOpcja2.addActionListener(this);
+        menuOpcje.add(mOpcje1);
+        menuOpcje.add(chOpcja2);
+        menuNarzędzia.add(menuOpcje);
+
+        menuBar.add(Box.createHorizontalGlue());
+
+
+        mOProgramie = new JMenuItem("O Programie");
+
+        mPomoc = new JMenuItem("Pomoc");
+        mOProgramie.addActionListener(this);
+        menuPomoc.add(mOProgramie);
+        menuPomoc.add(mPomoc);
+
+
+    }
+    public static void main(String[] args) {
+        Grafika okno = new Grafika();  // tworzymy nowy obietk
+        okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        okno.setVisible(true); // powoduje otwarcie okienka
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object źródło = e.getSource();
+        if(źródło == bZaloguj) {  // definiowanie co maja robic poszczegolne przyciski
+            LogIn logowanie = new LogIn();
+        }
+        else if (źródło == bDodajKonto)
+        {
+            System.out.println("Dodaje konto");
+        }
+        else if (źródło == bWyjscie)
+        {
+            dispose();  // wyjcie z programu
+        }
+        else if (źródło == mWyjście)
+        {
+            dispose();
+        }
+        else if (źródło == chOpcja2)
+        {
+            if (chOpcja2.isSelected())
+            {
+                mNarz1.setEnabled(true);
+            }
+            else if (! chOpcja2.isSelected())
+            {
+                mNarz1.setEnabled(false);
+            }
+        }
+        else if (źródło == mOProgramie)
+        {
+            JOptionPane.showMessageDialog(this, "Aplikacje testowa. \n Wyświetla dane o użytkownikach");
+        }
+
+    }
+}
